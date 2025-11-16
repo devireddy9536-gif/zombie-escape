@@ -29,7 +29,7 @@ backstoryTextEl.innerText = backstory.trim();
 const rooms = [
   {
     title: "Room 1 — The Flooded Archive",
-    img: "./img1.jpg",
+    img: "img1.jpg",
     text:
 `Through shattered doors the cold wind creeps,
 Where dusty echoes never sleep.
@@ -43,7 +43,7 @@ For one path hides what once was good.`,
   },
   {
     title: "Room 2 — The Echoing Lab",
-    img: "./img2.jpg",
+    img: "img2.jpg",
     text:
 `Fog rolls thick where nightmares tread,
 And silent cries call forth the dead.
@@ -57,7 +57,7 @@ Or flee the path as death grows near.`,
   },
   {
     title: "Room 3 — The Dormant Husk",
-    img: "./img3.jpg",
+    img: "img3.jpg",
     text:
 `Within this barn where wood decays,
 The moonlight tricks and shadows play.
@@ -71,7 +71,7 @@ If you retreat from where horror lies.`,
   },
   {
     title: "Room 4 — Red Moon Valley",
-    img: "./img7.jpg",
+    img: "img7.jpg",
     text:
 `The valley bleeds a crimson light,
 As zombies rise to greet the night.
@@ -85,7 +85,7 @@ For death walks slow but hunts its own.`,
   },
   {
     title: "Room 5 — The Shadowed Lab",
-    img: "./img4.jpg",
+    img: "img4.jpg",
     text:
 `Machines once hummed with brilliant minds,
 Now twisted screams are all you’ll find.
@@ -99,7 +99,7 @@ Will you uncover truth… or race?`,
   },
   {
     title: "Room 6 — Zombie Attack",
-    img: "./img5.jpg",
+    img: "img5.jpg",
     text:
 `A sudden howl — a shifting shape,
 No time remains for clean escape.
@@ -113,7 +113,7 @@ All paths will dance with waking dead.`,
   },
   {
     title: "Room 7 — Mountain Escape (Ending)",
-    img: "./img6.jpg",
+    img: "img6.jpg",
     text:
 `You climb beyond where shadows roam,
 The mountain winds now call you home.
@@ -184,3 +184,4 @@ function loadRoom(i) {
 window.addEventListener('beforeunload', () => {
   try { bgm.pause(); bgm.currentTime = 0; } catch(e){}
 });
+
