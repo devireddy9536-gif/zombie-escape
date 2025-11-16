@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    background-color: #080808;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    overflow-x: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+#startScreen {
+    text-align: center;
+    padding-top: 15%;
+}
+
+.title {
+    font-family: 'Creepster', cursive;
+    font-size: 70px;
+    color: #ff2a2a;
+    text-shadow: 0 0 20px red;
+}
+
+.subtitle {
+    font-size: 25px;
+    margin-top: -10px;
+    color: #d6d6d6;
+}
+
+#startBtn, #exitBtn {
+    padding: 12px 30px;
+    margin-top: 30px;
+    border: none;
+    background: #ff2a2a;
+    color: white;
+    font-size: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#startBtn:hover, #exitBtn:hover {
+    background: #cc0000;
+    transform: scale(1.05);
+}
+
+#gameContainer {
+    text-align: center;
+    padding: 20px;
+}
+
+#mainImage {
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 0 25px red;
+}
+
+.textBox {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    background: rgba(20, 20, 20, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid red;
+    border-right: 4px solid red;
+}
+
+#choiceButtons button {
+    display: block;
+    width: 300px;
+    margin: 10px auto;
+    padding: 14px;
+    font-size: 18px;
+    background: #222;
+    color: #fff;
+    border: 1px solid red;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#choiceButtons button:hover {
+    background: red;
+    transform: scale(1.05);
+}
