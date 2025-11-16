@@ -1,83 +1,109 @@
-document.getElementById("startBtn").onclick = () => {
-    document.getElementById("startScreen").classList.add("hidden");
-    document.getElementById("gameContainer").classList.remove("hidden");
-
-    document.getElementById("bgm").play();
-
-    loadRoom(0);
-};
-
-document.getElementById("exitBtn").onclick = () => {
-    location.reload();
-};
-
-// ---------------- GAME DATA -----------------
-
-const images = [
-    "img1.jpg",
-    "img2.jpg",
-    "img3.jpg",
-    "img4.jpg",
-    "img5.jpg",
-    "img6.jpg",
-    "img7.jpg"
-];
-
-const rooms = [
+// GAME DATA
+const gameData = [
     {
-        title: "Room 1 — The Cursed Village",
-        text: "The red moon rises… zombies crawl from the shadows.",
-        choices: ["Move Forward"]
+        img: "img1.jpg",
+        title: "Broken Village Entrance",
+        text: "You enter an abandoned village under a blood-red moon. Zombies crawl out from the shadows.",
+        choices: [
+            { text: "Walk inside the village", next: 1 },
+            { text: "Run back to the forest", next: 2 }
+        ]
     },
     {
-        title: "Room 2 — Fog of the Lost",
-        text: "A thick cursed fog surrounds you… something moves!",
-        choices: ["Continue"]
+        img: "img2.jpg",
+        title: "Silent Street",
+        text: "The street is filled with broken houses and strange growls.",
+        choices: [
+            { text: "Enter the damaged house", next: 3 },
+            { text: "Follow the muddy footprints", next: 4 }
+        ]
     },
     {
-        title: "Room 3 — The Burning Night",
-        text: "Flames glow from broken homes. The dead walk freely.",
-        choices: ["Proceed"]
+        img: "img3.jpg",
+        title: "Forest Escape?",
+        text: "You try to run… but zombies block the forest entrance.",
+        choices: [
+            { text: "Fight your way through", next: 5 },
+            { text: "Return to the village", next: 1 }
+        ]
     },
     {
-        title: "Room 4 — The Silent Path",
-        text: "You hear wolves howling at the red moon…",
-        choices: ["Go On"]
+        img: "img4.jpg",
+        title: "The Scientist’s Lab",
+        text: "You discover a hidden underground lab. The scientists who experimented here became zombies!",
+        choices: [
+            { text: "Search the lab", next: 6 },
+            { text: "Run upstairs", next: 1 }
+        ]
     },
     {
-        title: "Room 5 — Village of Screams",
-        text: "Zombies gather. Their eyes glow bright.",
-        choices: ["Next"]
+        img: "img5.jpg",
+        title: "Footprints Trail",
+        text: "The footprints lead you to an old well covered in blood.",
+        choices: [
+            { text: "Look inside the well", next: 7 },
+            { text: "Step away slowly", next: 1 }
+        ]
     },
     {
-        title: "Room 6 — Dark Castle",
-        text: "Far away, a blood-red castle appears.",
-        choices: ["Continue"]
+        img: "img6.jpg",
+        title: "Zombie Attack!",
+        text: "A group of zombies leap toward you.",
+        choices: [
+            { text: "Fight", next: 7 },
+            { text: "Scream for help", next: 7 }
+        ]
     },
     {
-        title: "Final Room — Blood Moon Peak",
-        text: "You reached the final point. You survived the village!",
-        choices: ["Play Again"]
+        img: "img7.jpg",
+        title: "THE END",
+        text: "Your fate is sealed… but you can replay the game.",
+        choices: [
+            { text: "Restart Game", next: 0 }
+        ]
     }
 ];
 
-function loadRoom(i) {
-    document.getElementById("mainImage").src = images[i];
-    document.getElementById("roomTitle").innerText = rooms[i].title;
-    document.getElementById("roomText").innerText = rooms[i].text;
+let currentRoom = 0;
 
-    let btns = document.getElementById("choiceButtons");
-    btns.innerHTML = "";
+// ELEMENTS
+const startScreen = document.getElementById("startScreen");
+const gameContainer = document.getElementById("gameContainer");
+const mainImage = document.getElementById("mainImage");
+const roomTitle = document.getElementById("roomTitle");
+const roomText = document.getElementById("roomText");
+const choiceButtons = document.getElementById("choiceButtons");
+const bgm = document.getElementById("bgm");
 
-    rooms[i].choices.forEach(choice => {
-        let b = document.createElement("button");
-        b.innerText = choice;
+// START GAME
+document.getElementById("startBtn").addEventListener("click", () => {
+    startScreen.style.display = "none";
+    gameContainer.classList.remove("hidden");
+    bgm.play();
+    loadRoom(0);
+});
 
-        b.onclick = () => {
-            if (i === rooms.length - 1) location.reload();
-            else loadRoom(i + 1);
-        };
+// EXIT BUTTON
+document.getElementById("exitBtn").addEventListener("click", () => {
+    location.reload();
+});
 
-        btns.appendChild(b);
+// LOAD ROOM
+function loadRoom(number) {
+    currentRoom = number;
+    let room = gameData[number];
+
+    mainImage.src = room.img;
+    roomTitle.textContent = room.title;
+    roomText.textContent = room.text;
+
+    choiceButtons.innerHTML = "";
+    room.choices.forEach(choice => {
+        let btn = document.createElement("button");
+        btn.textContent = choice.text;
+        btn.onclick = () => loadRoom(choice.next);
+        choiceButtons.appendChild(btn);
     });
 }
+
+
