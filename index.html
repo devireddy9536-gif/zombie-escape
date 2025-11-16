@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zombie Escape – Red Moon Village</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Background audio -->
+  <audio id="bgm" src="sound.mp3" loop></audio>
+
+  <!-- Start / Backstory Screen -->
+  <div id="startScreen">
+    <h1 class="title">ZOMBIE ESCAPE</h1>
+    <p class="subtitle">Red Moon Village</p>
+
+    <div id="backstoryBox" style="max-width:900px;margin:20px auto;padding:16px;background:rgba(0,0,0,0.55);border-radius:8px;border-left:4px solid #b22;">
+      <pre id="backstoryText" style="white-space:pre-line;color:#f0e6e6;font-size:18px;line-height:1.4;margin:0;">
+      </pre>
+    </div>
+
+    <button id="commenceBtn" style="padding:14px 36px;font-size:22px;border-radius:12px;background:#8b0000;border:3px solid #ff2a2a;color:white;cursor:pointer;box-shadow:0 0 18px rgba(255,20,20,0.35);">
+      Commence the Trial
+    </button>
+  </div>
+
+  <!-- Game Container -->
+  <div id="gameContainer" class="hidden">
+    <img id="mainImage" src="img1.jpg" style="width:90%;max-width:1000px;border-radius:10px;display:block;margin:10px auto;box-shadow:0 0 30px rgba(160,20,20,0.45)" alt="scene">
+    <div class="textBox" style="max-width:900px;margin:12px auto;padding:18px;background:rgba(12,12,12,0.72);border-radius:10px;border-left:4px solid #b22;color:#efecec">
+      <h2 id="roomTitle" style="margin-top:0;font-family:'Creepster',cursive;font-size:26px;color:#ffbdbd;text-shadow:0 2px 8px rgba(0,0,0,0.6)"></h2>
+      <p id="roomText" style="font-size:18px;line-height:1.45;margin-bottom:6px;"></p>
+    </div>
+
+    <div id="choiceButtons" style="margin-bottom:20px;"></div>
+
+    <div style="margin:18px auto;text-align:center;">
+      <button id="exitBtn" style="padding:10px 20px;border-radius:8px;background:#333;border:2px solid #8b0000;color:#fff;cursor:pointer">Exit Game</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
