@@ -4,7 +4,7 @@
 
 // ===== CONFIG =====
 const START_LIVES = 3;               // starting lives
-const PENALTY_SECONDS = 30;          // wait time after a wrong choice
+const PENALTY_SECONDS = 15;          // wait time after a wrong choice
 const RESPONSE_TIMEOUT_SECONDS = 20; // time to answer after life is deducted
 
 // ===== DOM ELEMENTS =====
@@ -27,7 +27,7 @@ let lifelineBtn = null;
 let lifelineUsed = false;
 
 let msgEl = null;              // message area below choices
-let penaltyInterval = null;    // 30s penalty handle
+let penaltyInterval = null;    // 15s penalty handle
 let responseInterval = null;   // response timer handle
 let responseTimerEl = null;    // visible small timer beside question
 
@@ -520,3 +520,4 @@ exitBtn.addEventListener("click", () => {
 window.addEventListener("beforeunload", () => {
   try { bgm.pause(); bgm.currentTime = 0; } catch(e){}
 });
+
