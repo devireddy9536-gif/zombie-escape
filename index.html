@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zombie Escape — Red Moon Village</title>
+
+  <!-- Horror Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS File -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Music -->
+  <audio id="bgm" src="sound.mp3" loop preload="auto"></audio>
+
+  <!-- START SCREEN -->
+  <div id="startScreen" class="wrap">
+    <h1 class="title">ZOMBIE ESCAPE</h1>
+    <p class="subtitle">Red Moon Village</p>
+
+    <div id="backstoryBox" class="backstoryBox">
+      <pre id="backstoryText" style="white-space:pre-line;margin:0;"></pre>
+    </div>
+
+    <button id="commenceBtn" class="btn">Commence the Trial</button>
+  </div>
+
+  <!-- GAME SCREEN -->
+  <div id="gameContainer" class="hidden wrap">
+
+    <!-- Controls: lifeline + lives (script will manage visibility/state) -->
+    <div id="controls" aria-hidden="false"></div>
+
+    <img id="mainImage" src="img1.jpg" alt="scene">
+
+    <div class="textBox">
+      <div style="display:flex;align-items:center;gap:8px">
+        <h2 id="roomTitle"></h2>
+        <!-- responseTimerEl will be appended here by JS if created -->
+      </div>
+      <p id="roomText"></p>
+    </div>
+
+    <div id="choiceButtons" aria-live="polite"></div>
+
+    <button id="exitBtn" class="choiceBtn" style="margin-top:20px; width: auto;">Exit Game</button>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
