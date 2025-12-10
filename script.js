@@ -21,7 +21,7 @@ const exitBtn = document.getElementById("exitBtn");
 // CONFIG: lives and response timeout (edit these numbers if you want)
 // ===============================
 const START_LIVES = 3;               // player starts with 3 lives
-const PENALTY_SECONDS = 30;          // wait time after wrong choice
+const PENALTY_SECONDS = 15;          // wait time after wrong choice
 const RESPONSE_TIMEOUT_SECONDS = 20; // time to answer after life is deducted
 
 // lifeline button (created dynamically)
@@ -598,3 +598,4 @@ function clearAllTimersAndMessages() {
 window.addEventListener("beforeunload", () => {
   try { bgm.pause(); bgm.currentTime = 0; } catch(e){}
 });
+
