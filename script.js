@@ -4,7 +4,7 @@
 
 // ===== CONFIG =====
 const START_LIVES = 3;               // starting lives
-const PENALTY_SECONDS = 30;          // wait time after a wrong choice
+const PENALTY_SECONDS = 15;          // wait time after a wrong choice
 const RESPONSE_TIMEOUT_SECONDS = 20; // time to answer after life is deducted
 
 // ===== DOM ELEMENTS =====
@@ -551,3 +551,4 @@ exitBtn.addEventListener("click", () => {
 window.addEventListener("beforeunload", () => {
   try { bgm.pause(); bgm.currentTime = 0; } catch(e){}
 });
+
