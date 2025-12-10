@@ -30,7 +30,7 @@ let lifelineUsed = false;
 
 // message and interval handles
 let msgEl = null;              // message area below choices
-let penaltyInterval = null;    // 30s penalty interval handle
+let penaltyInterval = null;    // 15s penalty interval handle
 let responseInterval = null;   // response timer interval handle
 
 // lives & UI element to show them
@@ -598,4 +598,5 @@ function clearAllTimersAndMessages() {
 window.addEventListener("beforeunload", () => {
   try { bgm.pause(); bgm.currentTime = 0; } catch(e){}
 });
+
 
