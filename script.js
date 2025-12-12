@@ -51,8 +51,7 @@ Twists human bones beneath red light.
 Now chambers wait with puzzles grim —
 Your fate decides if moon grows dim.
 `;
-text:A room contains a question with 3 choices. If your 1st attempt is right,you will go to next room. If your 1st attempt is wrong, you will have to wait for 15 secs to do 2nd attempt but you will lose 1 life, and hint will be displayed. 
-backstoryTextEl.textContent = backstory.trim();
+backstoryTextEl.textContent =backstory.trim();
 
 // ===== Rooms (questions/choices) =====
 const rooms = [
@@ -581,4 +580,5 @@ exitBtn.addEventListener("click", () => {
 window.addEventListener("beforeunload", () => {
   try { bgm.pause(); bgm.currentTime = 0; } catch(e){}
 });
+
 
