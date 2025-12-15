@@ -5,7 +5,7 @@
 
 // ===== CONFIG =====
 const START_LIVES = 3;
-const PENALTY_SECONDS = 15;
+const PENALTY_MINUTES = 1;
 const RESPONSE_TIMEOUT_SECONDS = 20;
 const HINT_DISPLAY_SECONDS = 20;
 
@@ -301,3 +301,4 @@ exitBtn.onclick = () => {
   gameContainer.classList.add("hidden");
   startScreen.classList.remove("hidden");
 };
+
