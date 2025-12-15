@@ -1,0 +1,163 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #140000, #020000 70%);
+  color: #eee;
+  font-family: Roboto, system-ui, sans-serif;
+}
+
+.hidden { display: none !important; }
+
+.wrap {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ===== TITLES ===== */
+.title {
+  font-family: 'Nosifer', cursive;
+  font-size: 48px;
+  color: #ff2b2b;
+  text-shadow: 0 0 25px rgba(255,0,0,0.8);
+}
+
+.subtitle { color: #ffbdbd; }
+
+/* ===== BOXES ===== */
+.backstoryBox,
+.textBox,
+.howToPlayBox {
+  max-width: 920px;
+  margin: 12px auto;
+  padding: 16px;
+  background: rgba(0,0,0,0.75);
+  border-left: 6px solid #b22;
+  border-radius: 10px;
+  text-align: left;
+}
+
+/* 💜 HOW TO PLAY */
+.howToPlayBox {
+  border-left-color: #c48cff;
+  background: rgba(196,140,255,0.12);
+  color: #f1e8ff;
+}
+
+/* ===== IMAGE ===== */
+#mainImage {
+  width: 90%;
+  max-width: 980px;
+  margin: 14px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 60px rgba(255,0,0,0.3);
+}
+
+/* ===== QUESTION ===== */
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.textBox h2 {
+  font-family: 'Creepster', cursive;
+  color: #ffbdbd;
+  margin: 0;
+}
+
+/* 🔥 POEM TEXT WITH RED GLOW */
+.poemText {
+  font-family: 'Creepster', cursive;
+  font-size: 22px;
+  line-height: 1.7;
+  white-space: pre-line;
+  color: #ffecec;
+  margin-top: 10px;
+  text-shadow:
+    0 0 5px rgba(255,0,0,0.8),
+    0 0 12px rgba(180,0,0,0.8),
+    0 0 24px rgba(120,0,0,0.9);
+}
+
+/* 🩸 BLOOD DRIP */
+.bloodDrip {
+  position: relative;
+}
+
+.bloodDrip::after {
+  content: "";
+  position: absolute;
+  left: 15%;
+  top: 100%;
+  width: 6px;
+  height: 0;
+  background: linear-gradient(to bottom, #7b0000, #ff0000);
+  border-radius: 4px;
+  animation: drip 2.8s infinite ease-in;
+}
+
+@keyframes drip {
+  0% { height: 0; opacity: 0; }
+  30% { height: 18px; opacity: 1; }
+  60% { height: 34px; opacity: 0.9; }
+  100% { height: 0; opacity: 0; }
+}
+
+/* ⏱ TIMER */
+#responseTimerEl {
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgba(196,140,255,0.25);
+  color: #c48cff;
+  font-weight: bold;
+  min-width: 70px;
+  text-align: center;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  padding: 12px 28px;
+  font-size: 18px;
+  border-radius: 12px;
+  background: #7b0000;
+  border: 2px solid #ff3b3b;
+  color: white;
+  cursor: pointer;
+}
+
+.choiceBtn {
+  display: block;
+  width: 60%;
+  margin: 12px auto;
+  padding: 14px;
+  font-size: 18px;
+  background: #8b0000;
+  border: 2px solid #ff4a4a;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ❤️ LIVES */
+#livesEl {
+  color: #ff2b2b;
+  font-size: 22px;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(255,0,0,0.9);
+}
+
+/* 🚪 EXIT */
+.exitBtn {
+  display: none;
+  margin: 20px auto;
+  padding: 12px 24px;
+  font-size: 18px;
+  background: #400000;
+  border: 2px solid #ff4a4a;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}

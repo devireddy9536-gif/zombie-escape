@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zombie Escape — Red Moon Village</title>
+
+  <!-- Horror Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <audio id="bgm" src="sound.mp3" loop preload="auto"></audio>
+
+  <!-- START SCREEN -->
+  <div id="startScreen" class="wrap">
+    <h1 class="title">ZOMBIE ESCAPE</h1>
+    <p class="subtitle">Red Moon Village</p>
+
+    <div class="backstoryBox">
+      <pre id="backstoryText"></pre>
+    </div>
+
+    <div class="howToPlayBox">
+      <pre id="howToPlay"></pre>
+    </div>
+
+    <button id="commenceBtn" class="btn">Commence the Trial</button>
+  </div>
+
+  <!-- GAME SCREEN -->
+  <div id="gameContainer" class="wrap hidden">
+
+    <div id="controls">
+      <div id="livesEl"></div>
+    </div>
+
+    <img id="mainImage" src="img1.jpg" alt="scene">
+
+    <div class="textBox">
+      <div class="titleRow">
+        <h2 id="roomTitle"></h2>
+        <div id="responseTimerEl" class="hidden"></div>
+      </div>
+
+      <!-- POEM QUESTION -->
+      <p id="roomText" class="poemText bloodDrip"></p>
+    </div>
+
+    <div id="choiceButtons"></div>
+
+    <button id="exitBtn" class="exitBtn">Exit Game</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
