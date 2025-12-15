@@ -56,7 +56,7 @@ HOW TO PLAY:
    – Deducts 1 life after the wait.
    – Shows a hint for 20 seconds.
 • After losing a life, you have 20 seconds to answer correctly.
-• If you fail to answer in time or lose all lives → GAME OVER→RESTART.
+• If you fail to answer in time or lose all lives → GAME OVER → RESTART.
 • Reach the Conclusion room to escape the lab!
 `.trim();
 
@@ -311,4 +311,5 @@ exitBtn.onclick = () => {
   startScreen.classList.remove("hidden");
   gameContainer.classList.add("hidden");
 };
+
 
